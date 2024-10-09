@@ -33,7 +33,7 @@ op exportTerraform(
   exportParameter: BaseExportModel,
 ): ArmAcceptedLroResponse<
   "Export request accepted.",
-  ArmCombinedLroHeaders<ArmOperationStatus, OperationStatus> &
+  ArmCombinedLroHeaders<ArmOperationStatus, ExportResult> &
     Azure.Core.Foundations.RetryAfterHeader
 > | ErrorResponse;
 
