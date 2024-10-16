@@ -5,8 +5,8 @@ using Azure.ClientGenerator.Core;
 using Microsoft.AzureTerraform;
 
 @@clientName(ExportTerraform.exportTerraform, "ExportTerraform", "csharp");
-@@clientName(ExportTerraform.getOperationStatus,
-  "GetOperationStatus",
-  "csharp"
-);
-@@access(ExportTerraform.getOperationStatus, Access.internal, "csharp");
+// @@clientName(ExportTerraform.getOperationStatus,
+//   "GetOperationStatus",
+//   "csharp"
+// );
+// @@access(ExportTerraform.getOperationStatus, Access.internal, "csharp");
