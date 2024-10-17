@@ -98,9 +98,9 @@
             "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "name": "body",
+            "name": "exportParameter",
             "in": "body",
-            "description": "the body",
+            "description": "The export parameter",
             "required": true,
             "schema": {
               "$ref": "#/definitions/BaseExportModel"

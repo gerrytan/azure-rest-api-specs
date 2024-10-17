@@ -32,14 +32,19 @@ interface ExportTerraform {
   @tag("ExportTerraform")
   // @useFinalStateVia("azure-async-operation")
   exportTerraform(
-    ...CommonExportTerraformParameters;
+    ...CommonExportTerraformParameters,
 
-    /** the body */
-    @bodyRoot body: BaseExportModel
-  ): ArmAcceptedLroResponse<"Resource operation accepted.", ArmLroLocationHeader<
-    Azure.Core.StatusMonitorPollingOptions<ArmOperationStatus>,
-    ExportResult,
-    string
-  > &
-    Azure.Core.Foundations.RetryAfterHeader> | ExportResult | ErrorResponse;
+    // Body parameter cannot be named 'body' or else we will encounter error at .NET SDK generation: Unhandled exception. System.InvalidOperationException: Attempting to get the discriminator value for property `type` on object type BaseExportModel but got none or non-primitive type
+    @doc("The export parameter")
+    @bodyRoot
+    exportParameter: BaseExportModel,
+  ): ArmAcceptedLroResponse<
+    "Resource operation accepted.",
+    ArmLroLocationHeader<
+      Azure.Core.StatusMonitorPollingOptions<ArmOperationStatus>,
+      ExportResult,
+      string
+    > &
+      Azure.Core.Foundations.RetryAfterHeader
+  > | ExportResult | ErrorResponse;
 }
